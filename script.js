@@ -8,24 +8,23 @@ window.addEventListener("load", function() {
 
     let form = document.querySelector("form");
     
-    //this.alert("form");
     form.addEventListener("submit", function (event) {
-      // stop the form submission
+     
       event.preventDefault();
       let pilotNameInput = document.getElementById("pilotName");
       let copilotNameInput = document.getElementById("copilotName");
       let fuelLevelInput = document.getElementById("fuelLevel");
       let cargoMassInput=document.getElementById("cargoMass");
       let list= document.getElementById("faultyItems");
-     // alert(list.value);
+    
      list.style.visibility = "hidden";
     
-      //check all fields are filled
+      
       if (validateInput(pilotNameInput.value) === `Empty`|| validateInput(copilotNameInput.value) === `Empty`|| 
       validateInput(fuelLevelInput.value) === `Empty`||validateInput(cargoMassInput.value) === `Empty`) {
           alert(`All fields are required`);
       }
-      //check that fuelLevel and cargoLevel are numbers and pilot and co-pilot are strings
+      
       else if (validateInput(fuelLevelInput.value) === 'Not a Number' || validateInput(cargoMassInput.value) === 'Not a Number') {
           alert(`Please enter numerical values for Fuel Level and Cargo Mass`);
       } else if (validateInput(pilotNameInput.value)===`Is a Number`||validateInput(copilotNameInput.value)===`Is a Number`) {
@@ -36,13 +35,8 @@ window.addEventListener("load", function() {
       }
         
     });
-    
-    
-    //list.style.visibility = "hidden";
-    
-    
-    
-       let listedPlanets;
+       //list.style.visibility = "hidden";
+        let listedPlanets;
        // Set listedPlanetsResponse equal to the value returned by calling myFetch()
        let listedPlanetsResponse = myFetch();
        listedPlanetsResponse.then(function (result) {
